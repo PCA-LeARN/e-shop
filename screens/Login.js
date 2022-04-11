@@ -7,7 +7,7 @@ import { useFonts } from "expo-font";
 import { fonts } from "../assets/fonts/fonts";
 // import { styles } from "../styles/screens/Login";
 
-const logo = require("../assets/images/logo.png");
+const logo = require("../assets/images/eshop.png");
 
 export default function Login() {
   const [loaded] = useFonts({
@@ -18,7 +18,7 @@ export default function Login() {
   }
   return (
     <View style={styles.container}>
-      <View style={{top:100}}>
+      <View style={{top:"29.5%"}}>
         <Image source={logo} style={styles.logo} />
         <LoginOption />
         <Form
@@ -35,7 +35,6 @@ export default function Login() {
           />
           <FormItem
             label="Mot de passe"
-            isRequired
             secureTextEntry={true}
             style={styles.input}
             labelStyle={styles.label}
@@ -131,5 +130,7 @@ const styles = StyleSheet.create({
     height: 45,
     marginLeft: 40,
     marginRight: 40,
+    marginBottom:0,
+    marginTop:0
   },
 });
