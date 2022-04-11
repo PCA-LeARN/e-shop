@@ -28,15 +28,16 @@ export default function StartScreen2() {
     <View style={styles.container}>
       <ImageBackground
         source={startscreen2}
-        resizeMode="cover"
+        resizeMode="contain"
         style={styles.backgroundImage}
       >
         <LinearGradient
           colors={["transparent", "white"]}
           style={styles.gradient}
         />
-        <Image source={logo} style={styles.logo} />
       </ImageBackground>
+      <Image source={logo} style={styles.logo} />
+
       <View style={{ height:height*0.32, backgroundColor:"white" }}>
         <View style={{ marginBottom: height * 0.1 }}>
           <View style={{ backgroundColor: "white" }}>
@@ -73,19 +74,21 @@ const styles = StyleSheet.create({
     right: 0,
     top: 0,
     height: height * 0.68,
+    width:"200%"
   },
 
   logo: {
     width: 100,
     height: 39,
     alignSelf: "center",
-    top: height * 0.5835,
+    top:-30
   },
 
   backgroundImage: {
     flex: 1,
     height,
-    resizeMode:"cover"
+    width:"200%",
+    left:"-118%"
   },
 
   notYet: {
