@@ -13,7 +13,7 @@ import { COLORS } from "../assets/Colors";
 import { useFonts } from "expo-font";
 import { fonts } from "../assets/fonts/fonts";
 
-const height = Dimensions.get("window").height;
+const height = Dimensions.get("screen").height;
 const logo = require("../assets/images/logo.png");
 const startscreen2 = require("../assets/images/startscreen2.png");
 export default function StartScreen2() {
@@ -35,26 +35,36 @@ export default function StartScreen2() {
           colors={["transparent", "white"]}
           style={styles.gradient}
         />
+        <LinearGradient
+          colors={["transparent", "white"]}
+          style={styles.gradient}
+        />
+        <LinearGradient
+          colors={["transparent", "white"]}
+          style={styles.gradient}
+        />
+        {/* <LinearGradient
+          colors={["transparent", "white"]}
+          style={styles.gradient}
+        /> */}
       </ImageBackground>
       <Image source={logo} style={styles.logo} />
 
-      <View style={{ height:height*0.32, backgroundColor:"white" }}>
-        <View style={{ marginBottom: height * 0.1 }}>
-          <View style={{ backgroundColor: "white" }}>
-            <TouchableOpacity style={styles.notYet2}>
-              <Text style={styles.textNotYet2}>Se connecter</Text>
-            </TouchableOpacity>
+      <View style={{ marginBottom: height * 0.1 }}>
+        <View>
+          <TouchableOpacity style={styles.notYet2}>
+            <Text style={styles.textNotYet2}>Se connecter</Text>
+          </TouchableOpacity>
 
-            <TouchableOpacity style={styles.notYet}>
-              <Text style={styles.textNotYet}>S'inscrire</Text>
-            </TouchableOpacity>
+          <TouchableOpacity style={styles.notYet}>
+            <Text style={styles.textNotYet}>S'inscrire</Text>
+          </TouchableOpacity>
 
-            <TouchableOpacity style={styles.notYet}>
-              <Text style={styles.textNotYet}>
-                Se connecter en tant qu'invité
-              </Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity style={styles.notYet}>
+            <Text style={styles.textNotYet}>
+              Se connecter en tant qu'invité
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -73,22 +83,22 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    height: height * 0.68,
-    width:"200%"
+    height: height,
+    width: "200%",
   },
 
   logo: {
     width: 100,
     height: 39,
     alignSelf: "center",
-    top:-30
+    top: -30,
   },
 
   backgroundImage: {
     flex: 1,
     height,
-    width:"200%",
-    left:"-118%"
+    width: "200%",
+    left: "-118%",
   },
 
   notYet: {

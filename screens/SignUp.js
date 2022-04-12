@@ -1,13 +1,14 @@
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from "react-native";
 import React from "react";
-import { Form, FormItem} from "react-native-form-component";
-import LoginOption from "../components/Login/LoginOption";
+import { Form, FormItem } from "react-native-form-component";
+import SignUpOption from "../components/SignUp/SignUpOption";
 import { COLORS } from "../assets/Colors";
 import { useFonts } from "expo-font";
 import { fonts } from "../assets/fonts/fonts";
 // import { styles } from "../styles/screens/Login";
 
 const logo = require("../assets/images/eshop.png");
+const height = Dimensions.get("screen").height;
 
 export default function Login() {
   const [loaded] = useFonts({
@@ -18,9 +19,9 @@ export default function Login() {
   }
   return (
     <View style={styles.container}>
-      <View style={{top:"29.5%"}}>
+      <View style={{ top:0.16*height }}>
         <Image source={logo} style={styles.logo} />
-        <LoginOption />
+        <SignUpOption />
         <Form
           onButtonPress={() => console.warn("do something")}
           buttonStyle={styles.button}
@@ -28,21 +29,34 @@ export default function Login() {
           buttonTextStyle={styles.buttonText}
         >
           <FormItem
-            label="Email ou nom d'utilisateur"
+            label="Nom d'utilisateur"
             style={styles.input}
             labelStyle={styles.label}
             autoCorrect={false}
           />
+
+          <FormItem
+            label="Email"
+            style={styles.input}
+            labelStyle={styles.label}
+            autoCorrect={false}
+          />
+
           <FormItem
             label="Mot de passe"
             secureTextEntry={true}
             style={styles.input}
             labelStyle={styles.label}
           />
+          <FormItem
+            label="Confirmation du mot de passe"
+            secureTextEntry={true}
+            style={styles.input}
+            labelStyle={styles.label}
+          />
         </Form>
-        <Text style={styles.passwordForgot}>Mot de passe oubliés ?</Text>
         <TouchableOpacity style={styles.notYet}>
-          <Text style={styles.textNotYet}>Pas encore inscrit ? S'inscrire</Text>
+          <Text style={styles.textNotYet}>Déjà inscrit ? Se connecter</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -68,8 +82,8 @@ const styles = StyleSheet.create({
     fontSize: 10,
     textDecorationLine: "underline",
     alignSelf: "center",
-    marginBottom: 25,
-    marginTop: 20,
+    marginBottom:0.03*height,
+    marginTop: 0.2*height,
   },
 
   input: {
@@ -111,9 +125,9 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 202,
-    height: 79,
-    bottom: 50,
+    width: 0.242*height,
+    height: 0.097*height,
+    bottom: height*0.062,
     alignSelf: "center",
   },
 
@@ -130,7 +144,7 @@ const styles = StyleSheet.create({
     height: 45,
     marginLeft: 40,
     marginRight: 40,
-    marginBottom:0,
-    marginTop:0
+    marginBottom: height*0.073,
+    marginTop: 0,
   },
 });

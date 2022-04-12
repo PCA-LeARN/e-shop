@@ -5,11 +5,6 @@ import { COLORS } from '../../assets/Colors'
 export default function LoginOption() {
   return (
     <View style={styles.container}>
-      {/* <TouchableOpacity style={styles.column1}>
-        <Text>
-          Back
-        </Text>
-      </TouchableOpacity> */}
       <Text style={styles.welcomeText}>Bienvenue à nouveau !</Text>
     </View>
   )
