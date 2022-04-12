@@ -10,6 +10,8 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/ngrok": "^4.1.0",
+    "@react-navigation/bottom-tabs": "^6.3.1",
     "@expo-google-fonts/poppins": "^0.2.2",
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.1",
@@ -25,6 +27,7 @@
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
     "react-native-web": "0.17.1",
+    "react-navigation-tabs": "^2.11.2",
     "expo-linear-gradient": "~11.0.3"
   },
   "devDependencies": {
