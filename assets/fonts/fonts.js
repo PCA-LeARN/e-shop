@@ -1,3 +1,5 @@
 export const fonts = {
-    poppins: require('./Poppins-Regular.ttf'),
-  }
+  poppins: {
+    regular: require("./Poppins-Regular.ttf"),
+  },
+};

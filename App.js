@@ -28,7 +28,7 @@ const getHeader = ({ route }) => {
 
 export default function App() {
   const [loaded] = useFonts({
-    Poppins: fonts.poppins,
+    Poppins: fonts.poppins.regular,
   });
   if (!loaded) {
     return null;
