@@ -1,10 +1,13 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import { COLORS } from "../../assets/Colors";
+
+const height = Dimensions.get("screen").height;
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    paddingTop:0.16*height
   },
 
   label: {
@@ -20,8 +23,8 @@ export const styles = StyleSheet.create({
     fontSize: 10,
     textDecorationLine: "underline",
     alignSelf: "center",
-    marginBottom: 25,
-    marginTop: 20,
+    marginBottom: 0.03 * height,
+    marginTop: 0.2 * height,
   },
 
   input: {
@@ -63,9 +66,9 @@ export const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 202,
-    height: 79,
-    bottom: 50,
+    width: 0.242 * height,
+    height: 0.097 * height,
+    bottom: height * 0.062,
     alignSelf: "center",
   },
 
@@ -82,7 +85,7 @@ export const styles = StyleSheet.create({
     height: 45,
     marginLeft: 40,
     marginRight: 40,
-    marginBottom: 0,
+    marginBottom: height * 0.073,
     marginTop: 0,
   },
 });

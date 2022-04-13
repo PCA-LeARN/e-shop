@@ -6,7 +6,9 @@ import WishList from "../screens/WishList";
 import Home from "../screens/Home";
 import Account from "../screens/Account";
 import StartScreen2 from "../screens/StartScreen2";
-
+import Login from "../screens/Login"
+import SignUp from "../screens/SignUp"
+import Checkout from "../screens/Checkout"
 // You can import Ionicons from @expo/vector-icons/Ionicons if you use Expo or
 // react-native-vector-icons/Ionicons otherwise.
 
@@ -16,7 +18,6 @@ const Tab = createBottomTabNavigator();
 export default function MyTabs() {
   return (
     <Tab.Navigator
-      style={styles.container}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, image, iconStyle }) => {
           if (route.name == "Home") {
@@ -50,17 +51,17 @@ export default function MyTabs() {
       />
       <Tab.Screen
         name="Wish"
-        component={WishList}
+        component={Login}
         options={{ headerShown: false }}
       />
       <Tab.Screen
         name="Bag"
-        component={Cart}
+        component={SignUp}
         options={{ headerShown: false }}
       />
       <Tab.Screen
         name="User"
-        component={Account}
+        component={Checkout}
         options={{ headerShown: false }}
       />
     </Tab.Navigator>
@@ -68,10 +69,6 @@ export default function MyTabs() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
   images: {
     width: 25,
     height: 25,

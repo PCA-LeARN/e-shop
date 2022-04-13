@@ -7,10 +7,12 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Navigation from "./navigation/Navigation";
 import Header from "./components/Header";
+import { fonts } from "./assets/fonts/fonts";
+import { useFonts } from "expo-font";
 
 const Stack = createNativeStackNavigator();
 
-const getHeader= ({ route }) => {
+const getHeader = ({ route }) => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? "Home";
   let showBack = true;
 
@@ -22,14 +24,20 @@ const getHeader= ({ route }) => {
   }
 
   return <Header showBack={showBack} />;
-}
+};
 
 export default function App() {
+  const [loaded] = useFonts({
+    Poppins: fonts.poppins,
+  });
+  if (!loaded) {
+    return null;
+  }
   return (
     <NavigationContainer style={StyleSheet.Container}>
       <Stack.Navigator
         screenOptions={{
-          header: (options) => getHeader(options),
+          headerShown: false,
         }}
       >
         <Stack.Screen name="TabNavigation" component={Navigation} />
