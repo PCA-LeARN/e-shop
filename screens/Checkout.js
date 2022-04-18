@@ -3,6 +3,7 @@ import React from 'react'
 import BillingAdress from '../components/Checkout/BillingAdress'
 import DeliverAdress from '../components/Checkout/DeliverAdress'
 import DeliverTotalCart from '../components/Checkout/DeliverTotalCart'
+import CheckoutSuccess from '../components/Checkout/CheckoutSuccess'
 
 export default function Checkout() {
   return (
@@ -10,6 +11,7 @@ export default function Checkout() {
         <DeliverAdress/>
         <BillingAdress/>
         <DeliverTotalCart/>
+        <CheckoutSuccess/>
     </View>
   )
 }
