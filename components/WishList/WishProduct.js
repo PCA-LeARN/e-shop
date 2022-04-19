@@ -17,18 +17,19 @@ export default function WishProduct({product}) {
                 <View style={styles.title_view}><Text style={styles.title_text}>{product.title}</Text></View>
                 <View style={styles.categories_view}><Text style={styles.categories_text}>{product.categories}</Text></View>  
             </View>
-            <View style={styles.bag_view}>
-                <View style={styles.price_view}>
-                        <View style={{flexDirection:"row"}}>
-                                <Text style={styles.price_text1}>{product.initial_price}</Text>
-                                <Text style={styles.price_text2}>{product.final_price}</Text>
-                        </View>
-                </View>
-                <Image
-                      style={styles.bag_image}
-                      source={require("../../assets/images/bag.png")}
-                  />
-            </View> 
+            <View style={styles.price_view}>
+              <View style={{flexDirection:'row'}}>
+                <Text style={styles.price_text1}>{product.initial_price}</Text>
+                <Text style={styles.price_text2}>{product.final_price}</Text>
+
+              </View>
+                <View style={{top:0,right:0,}}>
+                    <Image
+                        style={styles.bag_image}
+                        source={require("../../assets/images/bag.png")}
+                    />
+                </View> 
+            </View>
       </View>
 </View>
 
@@ -38,40 +39,23 @@ export default function WishProduct({product}) {
 
 const styles = StyleSheet.create({
     main_container: {
-      width:315,
-     // height: 95,
       flexDirection: 'row',
       backgroundColor: "#B9B8E3",
-
       marginVertical : 5,
       borderRadius:10,
-      //marginHorizontal:30,
-      justifyContent : 'center',
-    alignItems : 'center',
-    //paddingHorizontal : "7%",
-      marginHorizontal:30
-     // flex:1
-      
+      marginHorizontal:30,
+     flex:1,      
     },
     product_image: {
-      width: 100,
-      height: 95,
+      width: "32%",
+      height:100,
       borderBottomLeftRadius:10,
       borderTopLeftRadius:10
-      //margin: 5,
-      //backgroundColor: 'gray'
     },
     content_container: {
       flex: 1,
-      flexDirection: 'column',
-      margin: 5,
-      //width: 175,
-      //height: 61,
-      marginBottom:17,
-      marginTop:17,
-      marginLeft:20,
-      marginRight:20,
-      justifyContent:'space-between'
+      marginVertical:17,
+      marginHorizontal:10,
     },
     header_container: {
       //flexDirection: 'column',
@@ -82,41 +66,31 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-end'
     },
     title_view:{
-        width: 175,
         height: 20,
+        marginRight:0
     },
     categories_view:{
-        width: 175,
         height: 12,
+        marginRight:0
     },
     price_view:{
-        width: 150,
-        height: 17,
-        justifyContent:'flex-end'
-        //flexDirection:'column',
-
-       // margin:10
-    },
-    bag_view:{
-        // a enlever
-        //borderColor:'red',
-        //borderWidth:1,
-        flexDirection:'row',
         marginTop:10,
-
-        
-        
+        flexDirection:"row",
+        marginRight:10,
+        //position:'relative',
+        justifyContent:'space-between'
     },
     title_text: {
-      //fontWeight: 'bold',
       fontSize: 14,
       paddingRight: 5,
       fontFamily: "Poppins",
+      color: '#34316E',
     },
     categories_text: {
       fontSize: 9,
       fontFamily: "Poppins",
-      color: '#34316E'
+      color: '#34316E',
+      opacity:0.75
     },
     price_text1: {
         fontSize:12,
